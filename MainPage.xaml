@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Module01Exercise01"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             BackgroundColor="{DynamicResource LocalBackgroundColor}"
+             x:Class="Module01Exercise01.MainPage">
+
+
+    <ContentPage.Resources>
+        <x:String x:Key="StaticTitle">Welcome to the Registration Form</x:String>
+        <Style x:Key="Staticlabel" TargetType="Label"/>
+        <Style x:Key="StaticEntry" TargetType="Entry"/>
+
+        <Color x:Key="LocalBackgroundColor">gray</Color>
+    </ContentPage.Resources>
+    
+    
+        <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label x:Name="StaticResourceLabel" 
+             Text="{StaticResource StaticTitle}"/>
+
+
+            <Button Text="Light Mode" Clicked="OnChangeBackgroundColor"/>
+
+            <Button Text="Dark Mode" Clicked="OnChangeBackgroundColor1"/>
+
+
+            <Label Text="Name" Style="{StaticResource Staticlabel}"/>
+            <Entry x:Name="Username" Placeholder="Name"
+                   Style="{StaticResource StaticEntry}"/>
+
+            <Label Text="Email" Style="{StaticResource Staticlabel}"/>
+            <Entry x:Name="Email" Placeholder="Email"
+                   Style="{StaticResource StaticEntry}"/>
+            
+            <Label Text="Date Of Birth" Style="{StaticResource Staticlabel}"/>
+            <DatePicker x:Name="DatePicker" Date="{x:Static system:DateTime.Today }"/>
+
+            <Label Text="Bio" Style="{StaticResource Staticlabel}"/>
+            <Editor x:Name="Bio" Placeholder="Bio"
+                    Style="{StaticResource StaticEntry}"/>
+
+            <Button Text="Update" Clicked="UpdateInfo"/>
+
+
+            <Button Text="Light Mode" Clicked="OnChangeBackgroundColor"/>
+
+            <Button Text="Dark Mode" Clicked="OnChangeBackgroundColor1"/>
+    
+            <Label Text="{local:CurrentDateTime}"/>
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
